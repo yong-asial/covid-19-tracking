@@ -1,0 +1,19 @@
+{
+  "name": "covid19",
+  "version": "1.0.0",
+  "description": "covid-19 tracking",
+  "main": "app.js",
+  "scripts": {
+    "build": "echo build"
+  },
+  "keywords": [
+    "covid-10",
+    "corona",
+    "tracking"
+  ],
+  "author": "sopheaktra.yong@outlook.com",
+  "license": "ISC",
+  "devDependencies": {
+    "workbox-cli": "^5.0.0"
+  }
+}
