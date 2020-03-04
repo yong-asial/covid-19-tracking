@@ -4,7 +4,8 @@
   "description": "covid-19 tracking",
   "main": "app.js",
   "scripts": {
-    "build": "echo build"
+    "build": "echo build",
+    "dev": "browser-sync"
   },
   "keywords": [
     "covid-10",
@@ -14,6 +15,7 @@
   "author": "sopheaktra.yong@outlook.com",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "workbox-cli": "^5.0.0"
   }
 }

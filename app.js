@@ -62,7 +62,10 @@ async function main() {
     // Hubei            ,Mainland China,2020-03-02T15:03:23,67103    ,2803  ,33934    ,30.9756 ,112.2707
     //                  ,South Korea   ,2020-03-02T20:23:16,4335     ,28    ,30       ,36.0000 ,128.0000
     // "Santa Clara, CA",US            ,2020-03-02T20:33:02,9        ,0     ,1        ,37.3541 ,-121.9552
+    // Diamond Princess cruise ship,Others,2020-03-03T03:13:06,706,6,10,35.4437,139.6380
+
     data = data.split("\n");
+    const PROVINCE = 0;
     const COUNTRY = 1;
     const CONFIRMED = 3;
   
@@ -71,8 +74,9 @@ async function main() {
     for(let i=1; i<data.length; i++) {
       items = data[i].split(',');
       let extraIndex = items.length - 8;
-      const country = items[COUNTRY+extraIndex];
+      let country = items[COUNTRY+extraIndex];
       const confirmedCase = items[CONFIRMED+extraIndex];
+      if (country === 'Others') country = `Others - ${items[PROVINCE]}`;
       if (!country || !confirmedCase) continue;
       countries.add(country);
       countryConfirmedCases[country] = number(countryConfirmedCases[country]) + number(confirmedCase);
