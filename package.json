@@ -4,8 +4,8 @@
   "description": "covid-19 tracking",
   "main": "app.js",
   "scripts": {
-    "build": "echo build",
-    "dev": "browser-sync"
+    "build": "workbox injectManifest workbox-config.js",
+    "dev": "browser-sync start -s ./ --watch --port 8888"
   },
   "keywords": [
     "covid-10",
