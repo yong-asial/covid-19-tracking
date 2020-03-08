@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "build": "workbox injectManifest workbox-config.js",
-    "dev": "browser-sync start -s ./ --watch --port 8888"
+    "dev": "browser-sync start -s ./ --watch --port 8888",
+    "test": "wait-on -t 60000 http://localhost:8888 && cypress run"
   },
   "keywords": [
     "covid-10",
@@ -16,6 +17,8 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.26.7",
+    "cypress": "^4.1.0",
+    "wait-on": "^4.0.1",
     "workbox-cli": "^5.0.0"
   }
 }
