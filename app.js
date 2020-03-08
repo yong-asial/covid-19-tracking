@@ -57,12 +57,12 @@ async function main() {
   try {
     let d = new Date();
     let data = await fetchData(d);
-    // 0                ,1             ,2                  ,3        ,4     ,5        ,6       ,7
-    // Province/State   ,Country/Region,Last Update        ,Confirmed,Deaths,Recovered,Latitude,Longitude
-    // Hubei            ,Mainland China,2020-03-02T15:03:23,67103    ,2803  ,33934    ,30.9756 ,112.2707
-    //                  ,South Korea   ,2020-03-02T20:23:16,4335     ,28    ,30       ,36.0000 ,128.0000
-    // "Santa Clara, CA",US            ,2020-03-02T20:33:02,9        ,0     ,1        ,37.3541 ,-121.9552
-    // Diamond Princess cruise ship,Others,2020-03-03T03:13:06,706,6,10,35.4437,139.6380
+    // Column Index:0              ,1             ,2                  ,3        ,4     ,5        ,6       ,7
+    // Province/State              ,Country/Region,Last Update        ,Confirmed,Deaths,Recovered,Latitude,Longitude
+    // Hubei                       ,Mainland China,2020-03-02T15:03:23,67103    ,2803  ,33934    ,30.9756 ,112.2707
+    //                             ,South Korea   ,2020-03-02T20:23:16,4335     ,28    ,30       ,36.0000 ,128.0000
+    // "Santa Clara, CA"           ,US            ,2020-03-02T20:33:02,9        ,0     ,1        ,37.3541 ,-121.9552
+    // Diamond Princess cruise ship,Others        ,2020-03-03T03:13:06,706      ,6     ,10       ,35.4437 ,139.6380
 
     data = data.split("\n");
     const PROVINCE = 0;
