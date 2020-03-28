@@ -64,18 +64,22 @@ async function main() {
     // "Santa Clara, CA"           ,US            ,2020-03-02T20:33:02,9        ,0     ,1        ,37.3541 ,-121.9552
     // Diamond Princess cruise ship,Others        ,2020-03-03T03:13:06,706      ,6     ,10       ,35.4437 ,139.6380
 
+    // Update 2020/03/28 The data has changed
+    // 0,     1,        2              3              4                   5           6            7
+    // FIPS,  Admin2,   Province_State,Country_Region,Last_Update        ,Lat        ,Long_       ,Confirmed,Deaths,Recovered,Active,Combined_Key
+    // 45001, Abbeville,South Carolina,US            ,2020-03-27 22:14:55,34.22333378,-82.46170658,4        ,0     ,0        ,0     ,"Abbeville, South Carolina, US"
+
     data = data.split("\n");
-    const PROVINCE = 0;
-    const COUNTRY = 1;
-    const CONFIRMED = 3;
+    const PROVINCE = 2;
+    const COUNTRY = 3;
+    const CONFIRMED = 7;
   
     let countries = new Set()
     let countryConfirmedCases = [];
     for(let i=1; i<data.length; i++) {
       items = data[i].split(',');
-      let extraIndex = items.length - 8;
-      let country = items[COUNTRY+extraIndex];
-      const confirmedCase = items[CONFIRMED+extraIndex];
+      let country = items[COUNTRY];
+      const confirmedCase = items[CONFIRMED];
       if (country === 'Others') country = `Others - ${items[PROVINCE]}`;
       if (!country || !confirmedCase) continue;
       countries.add(country);
