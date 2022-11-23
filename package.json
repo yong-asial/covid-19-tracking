@@ -16,7 +16,7 @@
   "author": "sopheaktra.yong@outlook.com",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.27.10",
     "cypress": "^4.1.0",
     "wait-on": "^4.0.1",
     "workbox-cli": "^5.0.0"
